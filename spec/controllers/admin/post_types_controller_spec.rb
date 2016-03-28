@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Admin::PostTypesController do
   render_views
-  before do 
+  before do
     Factory(:blog)
     #TODO delete this after remove fixture
     Profile.delete_all
@@ -10,7 +10,7 @@ describe Admin::PostTypesController do
     request.session = { :user => @user.id }
   end
 
-  it "index shoudld redirect to new" do
+  it "index should redirect to new" do
     get :index
     assert_response :redirect, :action => 'new'
   end
@@ -41,13 +41,13 @@ describe Admin::PostTypesController do
       get :edit, :id => Factory.build(:post_type).id
       assert_template 'new'
     end
-      
+
     it "test_update" do
       post :edit, :id => Factory(:post_type).id
       assert_response :redirect, :action => 'index'
     end
   end
-    
+
   describe "test_destroy with GET" do
     before(:each) do
       test_id = Factory(:post_type).id
@@ -57,7 +57,7 @@ describe Admin::PostTypesController do
 
     it 'should render destroy template' do
       assert_response :success
-      assert_template 'destroy'      
+      assert_template 'destroy'
     end
   end
 
@@ -71,6 +71,6 @@ describe Admin::PostTypesController do
 
     assert_raise(ActiveRecord::RecordNotFound) { PostType.find(test_id) }
   end
- 
+
 
 end

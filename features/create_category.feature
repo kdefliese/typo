@@ -8,4 +8,7 @@ Feature: Create Categories
 
   Scenario: Successfully create new Categories
     When I click on Categories
-    Then I should go to the Categories index page
+    Then I should be on the new category page
+    When I fill in "category_name" with "Meow Meow"
+    And I press "Save"
+    Then I should see "Meow Meow"

@@ -280,7 +280,3 @@ end
 When /^I click on Categories$/ do
   click_link('Categories')
 end
-
-Then /^I should go to the Categories index page$/ do
-  visit 'admin/categories/new'
-end
