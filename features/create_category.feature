@@ -7,6 +7,5 @@ Feature: Create Categories
     And I am logged into the admin panel
 
   Scenario: Successfully create new Categories
-    Given I am on the Admin dashboard
     When I click on Categories
-    Then I should go to the New Categories page 
+    Then I should go to the New Categories page
