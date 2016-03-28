@@ -13,5 +13,9 @@ Feature: Edit Categories
     When I follow "Meow"
     Then I should be on the edit category page
     When I fill in "category_name" with "Meow Meow"
+    And I fill in "category_keywords" with "Cats Meow"
+    And I fill in "category_description" with "I really really like cats"
     And I press "Save"
     Then I should see "Meow Meow"
+    And I should see "Cats Meow"
+    And I should see "I really really like cats"
