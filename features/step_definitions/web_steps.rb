@@ -282,5 +282,5 @@ When /^I click on Categories$/ do
 end
 
 Then /^I should go to the Categories index page$/ do
-  visit 'admin/categories'
+  visit 'admin/categories/new'
 end
