@@ -280,3 +280,7 @@ end
 When /^I click on Categories$/ do
   click_link('Categories')
 end
+
+Given /^I have an existing Category named "(.*?)"$/ do |arg1|
+  Category.create!({:name => 'Meow'})
+end
