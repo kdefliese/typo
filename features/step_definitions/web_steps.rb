@@ -278,9 +278,9 @@ Then /^show me the page$/ do
 end
 
 When /^I click on Categories$/ do
-  visit 'categories/new' 
+  click_link('Categories')
 end
 
-Then /^I should go to the New Categories page$/ do
-  pending # express the regexp above with the code you wish you had
+Then /^I should go to the Categories index page$/ do
+  visit 'admin/categories'
 end

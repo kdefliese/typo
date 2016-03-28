@@ -8,4 +8,4 @@ Feature: Create Categories
 
   Scenario: Successfully create new Categories
     When I click on Categories
-    Then I should go to the New Categories page
+    Then I should go to the Categories index page
