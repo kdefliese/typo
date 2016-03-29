@@ -116,6 +116,7 @@ end
 
 Factory.define :second_article, :parent => :article do |a|
   a.title 'Another big article'
+  a.body 'This article will be merged'
   a.published_at Time.now - 2.seconds
 end
 

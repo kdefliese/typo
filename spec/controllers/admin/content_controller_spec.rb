@@ -48,7 +48,7 @@ describe Admin::ContentController do
       response.should render_template('index')
       response.should be_success
     end
-    
+
     it 'should restrict to withdrawn articles' do
       article = Factory(:article, :state => 'withdrawn', :published_at => '2010-01-01')
       get :index, :search => {:state => 'withdrawn'}
@@ -56,7 +56,7 @@ describe Admin::ContentController do
       response.should render_template('index')
       response.should be_success
     end
-  
+
     it 'should restrict to withdrawn articles' do
       article = Factory(:article, :state => 'withdrawn', :published_at => '2010-01-01')
       get :index, :search => {:state => 'withdrawn'}
@@ -543,6 +543,14 @@ describe Admin::ContentController do
         end.should change(Article, :count).by(-2)
         Article.should_not be_exists({:id => draft.id})
         Article.should_not be_exists({:id => draft_2.id})
+      end
+
+      it 'should allow an admin to merge two articles' do
+        article = @article
+        second_article = Factory(:second_article)
+        # some things happen here
+        article.body.should contain('A content with several data This article will be merged')
+        second_article.should_not be_exists
       end
     end
 
