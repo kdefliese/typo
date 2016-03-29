@@ -16,3 +16,10 @@ Feature: Create Categories
     Then I should see "Meow Meow"
     And I should see "Cats"
     And I should see "I like cats"
+
+  Scenario: Try to create a Category without a name
+    When I click on Categories
+    Then I should be on the new category page
+    When I fill in "category_name" with ""
+    And I press "Save"
+    Then page should have error message "Category could not be saved."
