@@ -106,7 +106,6 @@ Rails.application.routes.draw do
   end
 
   # Admin/XController
-  patch "admin/content/merge/:article_id_1/:article_id_2" => "/admin/content#merge", as: :merge_articles
 
   %w{advanced cache categories comments content profiles feedback general pages
      resources sidebar textfilters themes trackbacks users settings tags redirects seo post_types }.each do |i|

@@ -114,6 +114,8 @@ class Admin::ContentController < Admin::BaseController
   end
 
   def merge
+    @article_1 = Article.find(params[:id])
+    @article_1.merge_with(params[:other_article_id])
     redirect_to :action => 'index'
   end
 
