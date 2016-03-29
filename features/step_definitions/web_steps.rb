@@ -286,5 +286,5 @@ Given /^I have an existing Category named "(.*?)"$/ do |arg1|
 end
 
 Then /^page should have error message "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+   page.should have_content('Category could not be saved')
 end
