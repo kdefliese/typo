@@ -416,9 +416,9 @@ class Article < Content
     user.admin? || user_id == user.id
   end
 
-  def self.merge_with(other_article_id)
+  def merge_with(other_article_id)
     # keep title and author from article 1 (self)
-    article_2 = Article.find(other_article_id)
+    article_2 = Article.find(other_article_id.to_i)
     # combine body and comments from both articles
     self.body += " #{article_2.body}"
     self.comments += article_2.comments

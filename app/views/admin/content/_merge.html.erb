@@ -1,11 +1,13 @@
 <div>
   <h3>Merge Articles</h3>
-  <div class='clearfix'>
-    <label for="merge_with" style="width: 55px; margin-right: 5px;"><%= _("Article ID")%></label>
-    <div class='input'>
-      <input class="large" id="merge_id" name="merge_with" size="30" type="text">
+  <form action="/admin/content/merge/<%= @article.id %>" method="get">
+    <div class='clearfix'>
+      <label for="merge_with" style="width: 55px; margin-right: 5px;"><%= _("Article ID")%></label>
+      <div class='input'>
+        <input class="large" id="merge_id" name="merge_with" size="30" type="text">
+      </div>
     </div>
-  </div>
-  <br />
-  <button class="btn">Merge</button>
+    <br />
+    <button class="btn" type="submit" value="submit">Merge</button>
+  </form>
 </div>
