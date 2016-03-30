@@ -4,3 +4,7 @@
   <%= render :partial => "form" %>
 
 <% end %>
+
+<% if params[:id] && @current_user.admin? %>
+  <%= render :partial => "merge" %>
+<% end %>
