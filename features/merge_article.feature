@@ -5,8 +5,8 @@ Feature: Merge Articles
 
   Background:
     Given the blog is set up
-    And a blog entry exists with title "Entry 1" and text "This is entry 1"
-    And a similar blog entry exists with title "Entry 2" and text "This is entry 2"
+    And an article exists with title "Entry 1" and text "This is entry 1"
+    And a similar article exists with title "Entry 2" and text "This is entry 2"
 
   Scenario: Admin can successfully merge articles
     Given I am on the edit article page

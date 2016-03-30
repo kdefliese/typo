@@ -288,3 +288,13 @@ end
 Then /^page should have error message "(.*?)"$/ do |arg1|
    page.should have_content('Category could not be saved')
 end
+
+Given /^an article exists with title "(.*?)" and text "(.*?)"$/ do |arg1, arg2|
+  Article.create!({:title => arg1,
+                :body => arg2})
+end
+
+Given /^a similar article exists with title "(.*?)" and text "(.*?)"$/ do |arg1, arg2|
+  Article.create!({:title => arg1,
+                :body => arg2})
+end
