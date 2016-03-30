@@ -8,6 +8,6 @@ Feature: Merge Articles
     And an article exists with title "Entry 1" and text "This is entry 1"
     And a similar article exists with title "Entry 2" and text "This is entry 2"
 
-  Scenario: Admin can successfully merge articles
+  Scenario: Non-admin cannot merge articles
     Given I am on the edit article page
     Then I should not see "Merge Articles"
