@@ -24,6 +24,8 @@ module NavigationHelpers
       '/admin/categories/edit/2'
     when /^the edit article page$/
       'admin/content/edit/1'
+    when /^the article merge path$/
+      '/admin/content/merge/1'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

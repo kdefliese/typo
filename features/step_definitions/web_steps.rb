@@ -293,8 +293,3 @@ Given /^an article exists with title "(.*?)" and text "(.*?)"$/ do |arg1, arg2|
   Article.create!({:title => arg1,
                 :body => arg2})
 end
-
-Given /^a similar article exists with title "(.*?)" and text "(.*?)"$/ do |arg1, arg2|
-  Article.create!({:title => arg1,
-                :body => arg2})
-end

@@ -6,7 +6,6 @@ Feature: Merge Articles
   Background:
     Given the blog is set up
     And an article exists with title "Entry 1" and text "This is entry 1"
-    And a similar article exists with title "Entry 2" and text "This is entry 2"
 
   Scenario: Non-admin cannot merge articles
     Given I am on the edit article page

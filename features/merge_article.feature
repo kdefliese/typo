@@ -7,16 +7,15 @@ Feature: Merge Articles
     Given the blog is set up
     And I am logged into the admin panel
     And an article exists with title "Entry 1" and text "This is entry 1"
-    And a similar article exists with title "Entry 2" and text "This is entry 2"
 
   Scenario: Admin can successfully merge articles
     Given I am on the edit article page
     Then I should see "Merge Articles"
-    When I fill in "merge_with" with "2"
+    When I fill in "merge_with" with "3"
     And I press "Merge"
     Then I should be on the admin content page
-    And I should see "Articles successfully merged!"
-    And I should see "Entry 1"
-    And I should not see "Entry 2"
-    When I follow "Entry 1"
-    Then I should see "This is entry 1 This is entry 2"
+    And I should see "Article was successfully merged"
+    And I should see "Hello World!"
+    And I should not see "Entry 1"
+    When I follow "Hello World!"
+    Then I should see "Welcome to Typo. This is your first article. Edit or delete it, then start blogging! This is entry 1"
