@@ -23,7 +23,7 @@ module NavigationHelpers
       # there has to be a better way to do this...
       '/admin/categories/edit/2'
     when /^the edit article page$/
-      'admin/article/edit/1'
+      'admin/content/edit/1'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

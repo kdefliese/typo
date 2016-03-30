@@ -5,12 +5,12 @@ Feature: Merge Articles
 
   Background:
     Given the blog is set up
+    And I am logged into the admin panel
     And an article exists with title "Entry 1" and text "This is entry 1"
     And a similar article exists with title "Entry 2" and text "This is entry 2"
 
   Scenario: Admin can successfully merge articles
     Given I am on the edit article page
-    And I am logged into the admin panel
     Then I should see "Merge Articles"
     When I fill in "merge_with" with "2"
     And I press "Merge"
@@ -20,7 +20,3 @@ Feature: Merge Articles
     And I should not see "Entry 2"
     When I follow "Entry 1"
     Then I should see "This is entry 1 This is entry 2"
-
-  Scenario: Non-admin cannot merge articles
-    Given I am on the edit article page
-    Then I should not see "Merge Articles"
