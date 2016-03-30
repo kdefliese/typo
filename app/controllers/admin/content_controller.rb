@@ -115,12 +115,16 @@ class Admin::ContentController < Admin::BaseController
 
   def merge
     @article_1 = Article.find(params[:id])
-    if !Article.find_by_id(params[:merge_with]).nil?
+    # check to see that article with entered ID exists and isn't the same as the current article
+    if !Article.find_by_id(params[:merge_with]).nil? && (params[:merge_with] != params[:id])
       @article_1.merge_with(params[:merge_with])
       flash[:notice] = _('Article was successfully merged')
       redirect_to :action => 'index'
-    else
+    elsif Article.find_by_id(params[:merge_with]).nil?
       flash[:error] = _("An article doesn't exist with that ID! Please try again")
+      new_or_edit
+    else
+      flash[:error] = _("You can't merge this article with itself! Please try again")
       new_or_edit
     end
   end
