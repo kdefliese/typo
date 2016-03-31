@@ -548,7 +548,7 @@ describe Admin::ContentController do
       it 'should allow an admin to merge two articles' do
         article = @article
         second_article = Factory(:second_article)
-        # some things happen here
+        get :merge, 'id' => @article.id, 'merge_with' => second_article.id
         article.body.should contain('A content with several data This article will be merged')
         second_article.should_not be_exists
       end
